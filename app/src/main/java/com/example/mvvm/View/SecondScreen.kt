@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import com.example.mvvm.Navigation.AppsScreens
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,9 +53,11 @@ fun bodySecondScreen(navController: NavController,text : String?){
         text?.let {
             Text(it)
         }
-        Button(onClick = {}) {
-            Text(text = "Volver Atras")
-
+        Button(onClick = { navController.navigate(route = AppsScreens.SecondScreen.route + "/Bienvenido") }) {
+            Text(text = "Ir a Segunda pantalla")
+        }
+        Button(onClick = { navController.navigate(route = AppsScreens.ThirdScreen.route + "/Bienvenido") }) {
+            Text(text = "Ir a Tercera pantalla")
         }
 
     }
