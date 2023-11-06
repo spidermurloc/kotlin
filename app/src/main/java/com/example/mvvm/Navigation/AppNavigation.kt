@@ -8,6 +8,7 @@ import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
 import com.example.mvvm.View.FirstScreen
 import com.example.mvvm.View.SecondScreen
+import com.example.mvvm.View.ThirdScreen
 
 @Composable
 fun AppNavigation(){
@@ -23,5 +24,13 @@ fun AppNavigation(){
         )){
             SecondScreen(navController = navController, it.arguments?.getString("text"))
         }
+        composable(route = AppsScreens.ThirdScreen.route + "/{text}", arguments = listOf(
+            navArgument(name = "text"){
+                type = NavType.StringType
+        }
+        )){
+            ThirdScreen(navController = navController, it.arguments?.getString( "text"))
+
+    }
     }
 }

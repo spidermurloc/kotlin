@@ -35,7 +35,8 @@ class MainActivity : ComponentActivity() {
             val viewModel: MainActivityViewModel = viewModel()
             MVVMTheme {
                 Surface {
-                    AppNavigation()
+                    AppNavigation()git status
+                    
 
                 }
 
